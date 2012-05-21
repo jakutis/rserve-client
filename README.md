@@ -11,7 +11,7 @@ A stateful client for [Rserve](http://www.rforge.net/Rserve/), a TCP/IP server f
         });
     });
 
-See examples directory.
+See example directory.
 
 # Methods
 
