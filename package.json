@@ -1,0 +1,29 @@
+{
+    "name" : "rserve-client",
+    "version" : "0.0.1",
+    "description" : "A stateful client for Rserve, a TCP/IP server for R framework",
+    "license" : "MIT",
+    "keywords" : [
+        "rserve",
+        "client",
+        "r"
+    ],
+    "author" : {
+        "name" : "Vytautas Jakutis",
+        "email" : "vytautas@jakut.is",
+        "url" : "http://jakut.is"
+    },
+    "repository" : {
+        "type" : "git",
+        "url" : "http://github.com/tahu/rserve-client.git"
+    },
+    "main" : "./lib/rserve.js",
+    "dependencies" : {
+        "binary" : "0.3.x",
+        "buffers" : "0.1.x",
+        "jspack" : "0.0.x"
+    },
+    "engine" : {
+        "node" : "0.6"
+    }
+}
