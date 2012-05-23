@@ -17,6 +17,7 @@
         "type" : "git",
         "url" : "http://github.com/tahu/rserve-client.git"
     },
+    "bugs" : "https://github.com/tahu/rserve-client/issues",
     "main" : "./lib/rserve.js",
     "dependencies" : {
         "binary" : "0.3.x",
