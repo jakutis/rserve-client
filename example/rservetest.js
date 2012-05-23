@@ -8,6 +8,7 @@ require('../lib/rserve').connect('localhost', 6311, function(err, client) {
         console.log('evaluating', command);
         client.eval(command, function(err, ans) {
             console.log('answer', ans);
+            client.end();
         });
     });
 });

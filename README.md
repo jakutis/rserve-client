@@ -8,6 +8,7 @@ A stateful client for [Rserve](http://www.rforge.net/Rserve/), a TCP/IP server f
     r.connect('localhost', 6311, function(err, client) {
         client.eval('a<-2.7+2', function(err, ans) {
             console.log(ans);
+            client.end();
         });
     });
 
@@ -22,6 +23,10 @@ Connects to Rserve at hostname on port and returns the connection via callback.
 ## connection.eval(command, callback)
 
 Evaluates the given command on Rserve and returns the result via callback.
+
+## connection.end()
+
+Ends the connection by closing the socket.
 
 # Installation
 
