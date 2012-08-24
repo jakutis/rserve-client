@@ -15,9 +15,9 @@
     },
     "repository" : {
         "type" : "git",
-        "url" : "http://github.com/tahu/rserve-client.git"
+        "url" : "git://jakut.is/RSERVECLIENT"
     },
-    "bugs" : "https://github.com/tahu/rserve-client/issues",
+    "bugs" : "mailto:vytautas@jakut.is",
     "main" : "./lib/rserve.js",
     "dependencies" : {
         "binary" : "0.3.x",
