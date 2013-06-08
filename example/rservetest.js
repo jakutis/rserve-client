@@ -1,5 +1,5 @@
 require('../lib/rserve').connect('localhost', 6311, function(err, client) {
-    var command = 'a<-2.7+2';
+    var command = 'a<-list(1,c("ab","cd"))';
     console.log('evaluating', command);
     client.eval(command, function(err, ans) {
         console.log('answer', ans);
