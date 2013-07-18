@@ -2,6 +2,10 @@
 
 A stateful client for [Rserve](http://www.rforge.net/Rserve/), a TCP/IP server for [R project](http://www.r-project.org/).
 
+![npm stats](https://nodei.co/npm/rserve-client.png)
+
+![npm download stats](https://nodei.co/npm-dl/rserve-client.png?months=9)
+
 # Example
 
     var r = require('rserve-client');
