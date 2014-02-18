@@ -2,11 +2,22 @@
 
 A stateful client for [Rserve](http://www.rforge.net/Rserve/), a TCP/IP server for [R project](http://www.r-project.org/).
 
-![npm stats](https://nodei.co/npm/rserve-client.png)
+- [Overview](#overview)
+- [Installation](#installation)
+- [API](#api)
+- [Development](#development)
 
-![npm download stats](https://nodei.co/npm-dl/rserve-client.png?months=9)
+## Overview
 
-# Example
+    TODO
+
+## Installation
+
+  Install with [npm](https://www.npmjs.org/package/rserve-client):
+
+    $ npm install --save rserve-client
+
+## API
 
     var r = require('rserve-client');
     r.connect('localhost', 6311, function(err, client) {
@@ -18,26 +29,22 @@ A stateful client for [Rserve](http://www.rforge.net/Rserve/), a TCP/IP server f
 
 See example directory.
 
-# Methods
-
-## r.connect(hostname, port, callback)
+### .connect(hostname, port, callback)
 
 Connects to Rserve at hostname on port and returns the connection via callback.
 
-## connection.eval(command, callback)
+### connection.eval(command, callback)
 
 Evaluates the given command on Rserve and returns the result via callback.
 
-## connection.end()
+### connection.exec(command, callback)
+
+Alias of `connection.eval`.
+
+### connection.end()
 
 Ends the connection by closing the socket.
 
-# Installation
+## Development
 
-To install with [npm](http://github.com/isaacs/npm):
-
-    npm install rserve-client
-
-# License
-
-MIT
+    TODO
