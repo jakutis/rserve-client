@@ -8,19 +8,13 @@
         "client",
         "r"
     ],
-    "author" : {
-        "name" : "Vytautas Jakutis",
-        "email" : "vytautas@jakut.is",
-        "url" : "http://jakut.is"
-    },
+    "author" : "Vytautas Jakutis <vytautas@jakut.is> (https://jakut.is/)",
     "repository" : {
         "type" : "git",
         "url" : "https://github.com/jakutis/rserve-client"
     },
-    "bugs" : {
-        "url" : "http://github.com/owner/project/issues",
-        "email" : "vytautas@jakut.is"
-    },
+    "homepage" : "https://www.npmjs.org/package/rserve-client",
+    "bugs" : "https://github.com/jakutis/rserve-client/issues",
     "main" : "./lib/rserve.js",
     "dependencies" : {
         "binary" : "0.3.x",
