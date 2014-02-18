@@ -1,6 +1,6 @@
 # rserve-client
 
-A stateful client for [Rserve](http://www.rforge.net/Rserve/), a TCP/IP server for [R project](http://www.r-project.org/).
+A stateful client for Rserve, the TCP/IP server for R framework.
 
 - [Overview](#overview)
 - [Installation](#installation)
