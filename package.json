@@ -15,9 +15,12 @@
     },
     "repository" : {
         "type" : "git",
-        "url" : "https://jakut.is/git/RSERVECLIENT"
+        "url" : "https://github.com/jakutis/rserve-client"
     },
-    "bugs" : "mailto:vytautas@jakut.is",
+    "bugs" : {
+        "url" : "http://github.com/owner/project/issues",
+        "email" : "vytautas@jakut.is"
+    },
     "main" : "./lib/rserve.js",
     "dependencies" : {
         "binary" : "0.3.x",
