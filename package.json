@@ -14,7 +14,7 @@
         "url" : "https://github.com/jakutis/rserve-client"
     },
     "scripts" : {
-        "test" : "jshint --config ./jshint.json ./lib/rserve.js"
+        "test" : "./node_modules/.bin/jshint --config ./jshint.json ./lib/rserve.js ./lib/helpers.js"
     },
     "homepage" : "https://www.npmjs.org/package/rserve-client",
     "bugs" : "https://github.com/jakutis/rserve-client/issues",
@@ -23,6 +23,9 @@
         "binary" : "0.3.x",
         "buffers" : "0.1.x",
         "jspack" : "0.0.x"
+    },
+    "devDependencies" : {
+        "jshint" : "2.4.x"
     },
     "engine" : {
         "node" : ">=0.6"
