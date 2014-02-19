@@ -13,6 +13,9 @@
         "type" : "git",
         "url" : "https://github.com/jakutis/rserve-client"
     },
+    "scripts" : {
+        "test" : "jshint --config ./jshint.json ./lib/rserve.js"
+    },
     "homepage" : "https://www.npmjs.org/package/rserve-client",
     "bugs" : "https://github.com/jakutis/rserve-client/issues",
     "main" : "./lib/rserve.js",

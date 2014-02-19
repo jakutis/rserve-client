@@ -21,7 +21,7 @@ A stateful client for Rserve, the TCP/IP server for R framework.
 
     var r = require('rserve-client');
     r.connect('localhost', 6311, function(err, client) {
-        client.eval('a<-2.7+2', function(err, ans) {
+        client.evaluate('a<-2.7+2', function(err, ans) {
             console.log(ans);
             client.end();
         });
@@ -33,13 +33,9 @@ See example directory.
 
 Connects to Rserve at hostname on port and returns the connection via callback.
 
-### connection.eval(command, callback)
+### connection.evaluate(command, callback)
 
 Evaluates the given command on Rserve and returns the result via callback.
-
-### connection.exec(command, callback)
-
-Alias of `connection.eval`.
 
 ### connection.end()
 
