@@ -1,33 +1,35 @@
 {
-    "name" : "rserve-client",
-    "version" : "0.3.0",
-    "description" : "A stateful client for Rserve, the TCP/IP server for R framework.",
-    "license" : "MIT",
-    "keywords" : [
-        "rserve",
-        "client",
-        "r"
-    ],
-    "author" : "Vytautas Jakutis <vytautas@jakut.is> (https://jakut.is/)",
-    "repository" : {
-        "type" : "git",
-        "url" : "https://github.com/jakutis/rserve-client"
-    },
-    "scripts" : {
-        "test" : "./node_modules/.bin/jshint --config ./jshint.json ./lib/rserve.js ./lib/helpers.js"
-    },
-    "homepage" : "https://www.npmjs.org/package/rserve-client",
-    "bugs" : "https://github.com/jakutis/rserve-client/issues",
-    "main" : "./lib/rserve.js",
-    "dependencies" : {
-        "binary" : "0.3.x",
-        "buffers" : "0.1.x",
-        "jspack" : "0.0.x"
-    },
-    "devDependencies" : {
-        "jshint" : "2.6.x"
-    },
-    "engine" : {
-        "node" : ">=0.6"
-    }
+  "name": "rserve-client",
+  "version": "0.3.0",
+  "description": "A stateful client for Rserve, the TCP/IP server for R framework.",
+  "license": "MIT",
+  "keywords": [
+    "rserve",
+    "client",
+    "r"
+  ],
+  "author": "Vytautas Jakutis <vytautas@jakut.is> (https://jakut.is/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jakutis/rserve-client"
+  },
+  "scripts": {
+    "test": "R CMD Rserve;./node_modules/.bin/jshint --config ./jshint.json ./lib/rserve.js ./lib/helpers.js && mocha"
+  },
+  "homepage": "https://www.npmjs.org/package/rserve-client",
+  "bugs": "https://github.com/jakutis/rserve-client/issues",
+  "main": "./lib/rserve.js",
+  "dependencies": {
+    "binary": "0.3.x",
+    "buffers": "0.1.x",
+    "jspack": "0.0.x"
+  },
+  "devDependencies": {
+    "bluebird": "^2.9.14",
+    "jshint": "2.6.x",
+    "mocha": "2.2.x"
+  },
+  "engine": {
+    "node": ">=0.6"
+  }
 }
