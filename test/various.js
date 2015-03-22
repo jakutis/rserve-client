@@ -36,7 +36,19 @@ describe('rserve-client', function() {
                 [ [ 2, 3, 5 ], [ 'aa', 'bb', 'cc', 'dd', 'ee' ], [ true, false, true, false, false ] ]
             );
     });
-    it('supports matrices', function() {
+    it('supports double matrices', function() {
         return equals('matrix(c(1,2,3,4), 2, 2)', [[1,2],[3,4]]);
+    });
+    it('supports complex matrices', function() {
+        return equals('matrix(as.complex(c(12+3.14i,2,3,4)), 2, 2)', [[[12,3.14],[2,0]],[[3,0],[4,0]]]);
+    });
+    it('supports boolean matrices', function() {
+        return equals('matrix(c(T,F,T,F), 2, 2)', [[true,false],[true,false]]);
+    });
+    it('supports string matrices', function() {
+        return equals('matrix(c("a","b","c","d"), 2, 2)', [['a','b'],['c','d']]);
+    });
+    it('supports integer matrices', function() {
+        return equals('matrix(as.integer(c(1,2,3,4)), 2, 2)', [[1,2],[3,4]]);
     });
 });
