@@ -25,7 +25,7 @@
     "jspack": "0.0.x"
   },
   "devDependencies": {
-    "bluebird": "^2.9.14",
+    "bluebird": "2.9.x",
     "jshint": "2.6.x",
     "mocha": "2.2.x"
   },
