@@ -36,4 +36,7 @@ describe('rserve-client', function() {
                 [ [ 2, 3, 5 ], [ 'aa', 'bb', 'cc', 'dd', 'ee' ], [ true, false, true, false, false ] ]
             );
     });
+    it('supports matrices', function() {
+        return equals('matrix(c(1,2,3,4), 2, 2)', [[1,2],[3,4]]);
+    });
 });
