@@ -1,6 +1,6 @@
 {
   "name": "rserve-client",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "A stateful client for Rserve, the TCP/IP server for R framework.",
   "license": "MIT",
   "keywords": [
