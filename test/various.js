@@ -32,6 +32,17 @@ function equals(input, expectedOutput) {
 }
 
 describe('rserve-client', function() {
+    it('calls back with error when server does not exist', function() {
+        return new Promise(function(resolve, reject) {
+            require('../lib/rserve').connect('localhost', 1136, function(err) {
+                if(err) {
+                    resolve();
+                } else {
+                    reject(new Error('did not receive error'));
+                }
+            });
+        });
+    });
     it('supports numbers, strings, booleans, c() and list()', function() {
         return equals(
                 'list(c(2, 3, 5), c("aa", "bb", "cc", "dd", "ee"), c(TRUE, FALSE, TRUE, FALSE, FALSE), 3)',
