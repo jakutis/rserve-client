@@ -11,16 +11,16 @@ function equals(input, expectedOutput) {
                 client.end();
                 return;
             }
-            client.evaluate(input, function(err, actualOutput) {
-                if(err) {
-                    reject(err);
+            client.evaluate(input, function(evaluateError, actualOutput) {
+                if(evaluateError) {
+                    reject(evaluateError);
                     client.end();
                     return;
                 }
                 try {
                     assert.deepEqual(actualOutput, expectedOutput);
-                } catch(err) {
-                    reject(err);
+                } catch(testError) {
+                    reject(testError);
                     client.end();
                     return;
                 }
