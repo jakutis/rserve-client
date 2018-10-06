@@ -14,7 +14,7 @@
     "url": "https://github.com/jakutis/rserve-client"
   },
   "scripts": {
-    "test": "R CMD Rserve;jshint --config ./jshint.json ./lib/rserve.js ./lib/helpers.js && mocha"
+    "test": "bash -c \"echo -e 'library(Rserve);\\nRserve(args=\\\"--vanilla\\\")\\n' | R --vanilla\";jshint --config ./jshint.json ./lib/rserve.js ./lib/helpers.js && mocha"
   },
   "homepage": "https://www.npmjs.org/package/rserve-client",
   "bugs": "https://github.com/jakutis/rserve-client/issues",
