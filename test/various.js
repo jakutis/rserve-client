@@ -1,7 +1,27 @@
 'use strict';
 
+var fs = require('fs');
+var exec = require('child_process').exec;
 var assert = require('assert');
 var Promise = require('bluebird');
+
+function evaluate(client, input, output) {
+    return new Promise(function (resolve, reject) {
+        client.evaluate(input, function(evaluateError, actualOutput) {
+            if(evaluateError) {
+                reject(evaluateError);
+                return;
+            }
+            try {
+                assert.deepEqual(actualOutput, output);
+            } catch(testError) {
+                reject(testError);
+                return;
+            }
+            resolve();
+        });
+    });
+}
 
 function equals(input, expectedOutput) {
     return new Promise(function(resolve, reject) {
@@ -11,22 +31,14 @@ function equals(input, expectedOutput) {
                 client.end();
                 return;
             }
-            client.evaluate(input, function(evaluateError, actualOutput) {
-                if(evaluateError) {
-                    reject(evaluateError);
+            evaluate(client, input, expectedOutput)
+                .then(function () {
                     client.end();
-                    return;
-                }
-                try {
-                    assert.deepEqual(actualOutput, expectedOutput);
-                } catch(testError) {
-                    reject(testError);
+                    resolve();
+                }, function (err) {
                     client.end();
-                    return;
-                }
-                resolve();
-                client.end();
-            });
+                    reject(err);
+                });
         });
     });
 }
@@ -63,5 +75,46 @@ describe('rserve-client', function() {
     });
     it('supports integer matrices', function() {
         return equals('matrix(as.integer(c(1,2,3,4)), 2, 2)', [[1,2],[3,4]]);
+    });
+    it('reconnects', function () {
+        var pidfile = __dirname + '/../rs.pid';
+
+        return new Promise(function(resolve, reject) {
+            require('../lib/rserve').connect('localhost', 6311, function(err, client) {
+                if(err) {
+                    reject(err);
+                    client.end();
+                    return;
+                }
+                evaluate(client, '2+2', '4')
+                    .then(function () {
+                        return new Promise(function (resolve) {
+                            exec('killall Rserve', resolve);
+                        });
+                    })
+                    .then(function () {
+                        if (fs.existsSync(pidfile)) {
+                            throw new Error('failed to stop');
+                        }
+                        return new Promise(function(resolve) {
+                            exec('npm run start-rserve', resolve);
+                        });
+                    })
+                    .delay(500)
+                    .then(function () {
+                        if (!fs.existsSync(pidfile)) {
+                            throw new Error('failed to start');
+                        }
+                        return evaluate(client, '3+3', '6');
+                    })
+                    .then(function () {
+                        client.end();
+                        resolve();
+                    }, function (err) {
+                        client.end();
+                        reject(err);
+                    });
+          });
+      });
     });
 });
