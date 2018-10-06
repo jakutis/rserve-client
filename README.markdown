@@ -23,8 +23,6 @@ A stateful client for Rserve, the TCP/IP server for R framework.
         });
     });
 
-See example directory.
-
 ### .connect(hostname, port, callback)
 
 Connects to Rserve at hostname on port and returns the connection via callback.
