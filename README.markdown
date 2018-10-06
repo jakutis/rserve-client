@@ -32,6 +32,7 @@ Connects to Rserve at hostname on port and returns the connection via callback.
 ### connection.evaluate(command, callback)
 
 Evaluates the given command on Rserve and returns the result via callback.
+If client has disconnected, first reconnects, then evaluates.
 
 ### connection.end()
 
