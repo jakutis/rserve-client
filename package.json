@@ -14,7 +14,8 @@
     "url": "https://github.com/jakutis/rserve-client"
   },
   "scripts": {
-    "test": "bash -c \"echo -e 'library(Rserve);\\nRserve(args=\\\"--vanilla\\\")\\n' | R --vanilla\";jshint --config ./jshint.json ./lib/rserve.js ./lib/helpers.js && mocha"
+    "start-rserve": "nohup bash -c \"echo -e 'library(Rserve);\\nRserve(args=\\\"--RS-pidfile $(pwd)/rs.pid --vanilla\\\")\\n' | R --vanilla\" 1>/dev/null 2>&1 &",
+    "test": "npm run start-rserve && jshint --config ./jshint.json ./lib/rserve.js ./lib/helpers.js && mocha && kill $(cat rs.pid)"
   },
   "homepage": "https://www.npmjs.org/package/rserve-client",
   "bugs": "https://github.com/jakutis/rserve-client/issues",
