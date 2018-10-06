@@ -4,14 +4,8 @@ A stateful client for Rserve, the TCP/IP server for R framework.
 
 [![Build Status](https://travis-ci.org/jakutis/rserve-client.svg)](https://travis-ci.org/jakutis/rserve-client)
 
-- [Overview](#overview)
 - [Installation](#installation)
 - [API](#api)
-- [Development](#development)
-
-## Overview
-
-    TODO
 
 ## Installation
 
@@ -42,7 +36,3 @@ Evaluates the given command on Rserve and returns the result via callback.
 ### connection.end()
 
 Ends the connection by closing the socket.
-
-## Development
-
-    TODO
