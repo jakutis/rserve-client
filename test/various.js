@@ -100,11 +100,17 @@ describe('rserve-client', function() {
                             exec('npm run start-rserve', resolve);
                         });
                     })
-                    .delay(500)
                     .then(function () {
-                        if (!fs.existsSync(pidfile)) {
-                            throw new Error('failed to start');
-                        }
+                      return new Promise(function (resolve) {
+                        var interval = setInterval(function () {
+                          if (fs.existsSync(pidfile)) {
+                            clearInterval(interval);
+                            resolve();
+                          }
+                        }, 100);
+                      });
+                    })
+                    .then(function () {
                         return evaluate(client, '3+3', '6');
                     })
                     .then(function () {
